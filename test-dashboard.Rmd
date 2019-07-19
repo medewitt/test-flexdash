@@ -1,0 +1,71 @@
+---
+title: "Testing FlexDashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+
+```
+
+Column
+-----------------------------------------------------------------------
+
+### Articles per Day
+
+```{r}
+articles <- min(mtcars$mpg)
+valueBox(articles, icon = "fa-calendar")
+```
+
+### Comments per Day
+
+```{r}
+comments <- max(mtcars$mpg)
+valueBox(comments, icon = "fa-comments")
+```
+
+
+### Spam per Day
+
+```{r}
+spam <- max(mtcars$disp)
+valueBox(spam, 
+         icon = "fa-trash",
+         color = ifelse(spam > 10, "warning", "primary"))
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Just a Test
+
+```{r}
+spam <- paste0("yes", shiny::br(), "yes")
+valueBox(spam, 
+         icon = "fa-trash")
+```
+
+### Chart A
+
+```{r}
+knitr::kable(mtcars)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+
