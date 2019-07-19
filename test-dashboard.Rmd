@@ -13,14 +13,14 @@ library(flexdashboard)
 Column
 -----------------------------------------------------------------------
 
-### Articles per Day
+### Last Update
 
 ```{r}
 articles <- min(mtcars$mpg)
 valueBox(articles, icon = "fa-calendar")
 ```
 
-### Comments per Day
+### Last Term
 
 ```{r}
 comments <- max(mtcars$mpg)
